@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Car.gd" type="Script" id=1]
+[ext_resource path="res://assets/spritesheet_vehicles.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 34.4554
+height = 61.0982
+
+[node name="Car" type="KinematicBody2D"]
+position = Vector2( -787.884, 315.755 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+rotation = 1.5708
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 361.605, 3.20748, 70.1667, 128.878 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0153809, -0.00769043 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0.00976563, -0.0140228 )
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
